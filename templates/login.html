@@ -1,0 +1,17 @@
+{% extends 'layouts/index.html' %}
+{% block content %}
+<header>
+    <h2>Log in</h2>
+</header>
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <p>Username</p>
+    <input type="text" placeholder ="Introduce your username" class="introduce" name="username">
+    <p>Password</p>
+    <input type="password" placeholder="Introduce your password" class="introduce" name="password">
+    <span class="bottom_loging">
+    <a href="{% url 'register' %}" class="a-enter">Create account</a>
+    <input type="submit" value="Enter" class="btn-enter">
+    </span>
+</form>
+{% endblock %}
